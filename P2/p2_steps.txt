@@ -1,0 +1,13 @@
+1. Create the topology
+
+2. Launch the machines and open the auxiliary terminals
+
+3. Assign correct IP addresses to the hosts on the interface that connects to the router
+
+4. Configure the routers according to whether you want static cast or multicast:
+    - enters bash (ip -d show link doesn't work in busybox, neither does vxlan id 10)
+    - create and set up a bridge 
+    - create and set up vxlan interface with id 10
+    - add the two interfaces (eth1 and vxlan) to the bridge
+
+5. You can now test ping with wireshark.
