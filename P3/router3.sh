@@ -9,11 +9,12 @@ brctl addif br0 vxlan10
 
 vtysh
 conf t
+
 int eth2
-ip address 10.1.1.10/30
+ip addr 10.1.1.10/30
 ip ospf area 0
 int lo
-ip address 1.1.1.4/32
+ip addr 1.1.1.4/32
 ip ospf area 0
 
 router bgp 1

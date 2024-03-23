@@ -5,11 +5,11 @@ conf t
 int eth0
 ip addr 10.1.1.1/30
 int eth1
-ip address 10.1.1.5/30
+ip addr 10.1.1.5/30
 int eth2
-ip address 10.1.1.9/30
+ip addr 10.1.1.9/30
 int lo
-ip address 1.1.1.1/32
+ip addr 1.1.1.1/32
 
 router bgp 1
 neighbor DYNAMIC peer-group

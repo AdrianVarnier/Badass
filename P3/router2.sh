@@ -11,10 +11,10 @@ vtysh
 conf t
 
 int eth1
-ip address 10.1.1.6/30
+ip addr 10.1.1.6/30
 ip ospf area 0
 int lo
-ip address 1.1.1.3/32
+ip addr 1.1.1.3/32
 ip ospf area 0
 
 router bgp 1
