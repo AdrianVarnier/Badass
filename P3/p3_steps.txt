@@ -1,0 +1,7 @@
+GOAL: SIMULATE A SMALL DATACENTER USING BGP AND EVPN.
+
+1. Create the topology
+
+2. Launch the machines and open the auxiliary terminals
+
+3. 

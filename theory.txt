@@ -1,0 +1,14 @@
+GNS3 (Graphical Network Simulator) is a software that allows you to emulate networks with 
+a graphical interface. You can use Docker images inside GNS3 to virtualise network devices.
+
+AS (Autonomous System) is a cluster of networks that are under the same administrative control.
+
+BGP (Border Gateway Protocol) is a protocol, mainly used by Internet, that allows ASes to 
+communicate with each other using optimised routing tables. The optimisation takes into account
+length, origin and preferences in terms of routes.
+
+OSPF (Open Shortest Path First) is a protocol, mainly used to manage communication inside ASes,
+that relies upon an optimised algorithm to find the best link between a source and a destination,
+based on multiple criteria such as bandwith, delay or cost.
+
+

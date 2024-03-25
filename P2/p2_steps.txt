@@ -1,3 +1,6 @@
+GOAL: DISCOVER VXLAN. ENABLE CONNECTION BETWEEN DIFFERENT MACHINES,
+USING STATIC MULTICAST, THEN DYNAMIC MULTICAST.
+
 1. Create the topology
 
 2. Launch the machines and open the auxiliary terminals
