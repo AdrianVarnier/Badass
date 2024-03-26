@@ -3,12 +3,63 @@ a graphical interface. You can use Docker images inside GNS3 to virtualise netwo
 
 AS (Autonomous System) is a cluster of networks that are under the same administrative control.
 
+OSI Layer 2 (Data Link) defines the format of data on the network.
+OSI Layer 3 (Network) decides which physical path the data will take.
+
 BGP (Border Gateway Protocol) is a protocol, mainly used by Internet, that allows ASes to 
 communicate with each other using optimised routing tables. The optimisation takes into account
-length, origin and preferences in terms of routes.
+length, origin and preferences in terms of routes. BGP is an application (layer 7), however its
+technology relies upon TCP (layer 4) and uses routing tables (layer 3).
 
 OSPF (Open Shortest Path First) is a protocol, mainly used to manage communication inside ASes,
 that relies upon an optimised algorithm to find the best link between a source and a destination,
-based on multiple criteria such as bandwith, delay or cost.
+based on multiple criteria such as bandwith, delay or cost. OSPF uses IP protocol (layer 3)
+and MAC addressing (layer 2).
 
+A packet routing software breaks down data into "packets" and forward them properly from the
+source to the chosen destination by choosing the most efficient path. It also does network traffic
+control to regulate the flow of packets. Additionnally, it handles errors in case of corruption or
+loss of data and provides an interface to filter packets.
+
+We used Zebra as a routing engine service. It is a key component/software found inside the router
+that is responsible for making routing decisions. It uses BGP and OSPF protocols.
+
+Busybox is a shell in a single executable file that provides a limited number of commands. It uses 
+less memory and resources than standard shells.
+
+*************************************************************************************
+
+A LAN (Local Area Network) is a physical network.
+A VLAN (Virtual LAN) is the virtual layer on top of the LAN that offers better routing
+management by segmenting traffic and resources optimally. VLAN are restricted to 4096 which
+prevents scalability for big data centres, for example.
+VXLAN (Virtual Xtensible LAN) is a more scalable solution, as it uses layer 3 (IP addressing)
+that allows for 16 million VXLANs, going way beyond the restrictions of VLANs (that use MAC 
+addressing on layer 2). 
+
+A switch is a networking device that simply transmits data between connected devices of a same
+(local) network.
+
+A bridge is a networking device, similar to a virtual switch, that connects two segments of a network.
+In our configuration, it creates a link between the output of the host to VXLAN, through the router.
+
+Broadcasting is sending data to every machines connected on a network. Multicasting means sending to 
+designated machines.
+
+The topology should allow communication between the two routers and their hosts. If host1 wants to send 
+data to host2, it should work flawlessly.
+
+*************************************************************************************
+
+EVPN (Ethernet Virtual Private Network) is an extension of BGP that allows for more global control over
+the networks (hence, even more scalability). Instead of manually juggling with bridges and switches, it 
+simplifies routing by considering MAC and IP addresses alike. It therefore sits at the junction of Layer 2
+and Layer 3.
+
+The Route Reflector is essentially used for large-scale networking. It is a component used by BGP to
+improve routes distribution when many devices are added to the network. It consists in a router configured 
+as a route reflector communicating with its leaves (routers joining the network), aka VTEPs.
+
+VTEPs (VXLAN Tunnel Endpoints) describes the edges of a VXLAN where data is received, formatted and sent
+to the VXLAN network. Routers can be configured to be VTEPs.
 
