@@ -4,4 +4,21 @@ GOAL: SIMULATE A SMALL DATACENTER USING BGP AND EVPN.
 
 2. Launch the machines and open the auxiliary terminals
 
-3. 
+3. Configure the route reflector:
+    - assign an IP address to enable communication with our VTEPs through their respective eths
+    - assign a loopback address as an identifier inside the network
+    - activate a BGP session and create a peer group
+    - configure EVPN: set neighbors as clients (of the route reflector)
+    - configure OSPF: add all the router's interfaces to an OSPF domain
+
+4. Configure the routers: 
+    - create a VXLAN group and a bridge
+    - assign an IP address to enable communication with RR
+    - assign a loopback address as an identifier inside the network
+    - configure OSPF: add all the router's interfaces to an OSPF domain
+    - define router as neighbor with corresponding id
+    - activate EVPN
+    - activate OSPF
+
+5. Configure hosts:
+    - assign IP address to enable communication with VTEPs
