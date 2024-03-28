@@ -63,3 +63,7 @@ as a route reflector communicating with its leaves (routers joining the network)
 VTEPs (VXLAN Tunnel Endpoints) describes the edges of a VXLAN where data is received, formatted and sent
 to the VXLAN network. Routers can be configured to be VTEPs.
 
+Our routes of type 2 are MAC addresses routes detected by the VTEP they are link with that share
+the information with the other member of our network.
+Our routes of type 3 are IP addresses routes able to communicate with other routes connected with
+a VTEP of our VXLAN network.
